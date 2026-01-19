@@ -19,7 +19,7 @@ warnings.filterwarnings('ignore')
 # =====================================================================
 # CONFIGURATION: Update this URL after uploading to GitHub Release
 # =====================================================================
-DATA_RELEASE_URL = "https://github.com/YOUR_USERNAME/YOUR_REPO/releases/download/v1.0.0/aadhaar_hackathon_data.zip"
+DATA_RELEASE_URL = "https://github.com/Jdsb06/jan-gana-drishti-uidai/releases/download/v1.0.0/aadhaar_hackathon_data.zip"
 
 # Alternative: Direct CSV URLs (if hosting files separately)
 CSV_URLS = {
