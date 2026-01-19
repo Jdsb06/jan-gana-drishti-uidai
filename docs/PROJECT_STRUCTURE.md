@@ -15,6 +15,7 @@ jan-gana-drishti/
 ├── 📄 LICENSE                            # MIT License
 ├── 📄 requirements.txt                   # Python dependencies
 ├── 📄 packages.txt                       # System packages for deployment
+├── 📄 UIDAI_2401_Report.pdf              # 54-page hackathon submission (440KB)
 │
 ├── 🐍 app.py                             # Main Streamlit dashboard (93KB)
 │
@@ -74,6 +75,7 @@ jan-gana-drishti/
 
 ### Core Application Files (Root)
 - `app.py` - Main Streamlit dashboard application
+- `UIDAI_2401_Report.pdf` - 54-page hackathon submission document (440KB)
 - `requirements.txt` - Python package dependencies
 - `packages.txt` - System-level dependencies for cloud deployment
 - `run_dashboard.sh` - Quick launch script for local development
@@ -152,9 +154,9 @@ Development and maintenance tools:
 3. Run `./run_dashboard.sh`
 
 ### For Evaluators
-1. Review [docs/SUBMISSION.md](docs/SUBMISSION.md)
-2. Open [report/submission.pdf](report/submission.pdf)
-3. Visit [Live Dashboard](https://jan-gana-drishti-uidai-02.streamlit.app/)
+1. Open [UIDAI_2401_Report.pdf](../UIDAI_2401_Report.pdf)
+2. Visit [Live Dashboard](https://jan-gana-drishti-uidai-02.streamlit.app/)
+3. Explore the codebase and [analytics modules](../modules/)
 
 ### For Contributors
 1. See [docs/CONTRIBUTING.md](docs/CONTRIBUTING.md)
@@ -182,7 +184,7 @@ Development and maintenance tools:
 
 - **Live Dashboard:** [jan-gana-drishti-uidai-02.streamlit.app](https://jan-gana-drishti-uidai-02.streamlit.app/)
 - **GitHub Repository:** [github.com/Jdsb06/jan-gana-drishti-uidai](https://github.com/Jdsb06/jan-gana-drishti-uidai)
-- **Submission PDF:** [report/submission.pdf](report/submission.pdf)
+- **Submission PDF:** [../UIDAI_2401_Report.pdf](../UIDAI_2401_Report.pdf)
 
 ---
 

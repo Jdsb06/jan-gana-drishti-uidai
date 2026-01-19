@@ -23,11 +23,6 @@ Welcome to the comprehensive documentation for the Jan-Gana-Drishti Predictive G
 
 - **[API.md](API.md)** - API documentation for programmatic access
 - **[CONTRIBUTING.md](CONTRIBUTING.md)** - Guidelines for contributing to the project
-
-### Hackathon Submission
-
-- **[SUBMISSION.md](SUBMISSION.md)** - Complete hackathon submission details
-- **[SUBMISSION_CHECKLIST.md](SUBMISSION_CHECKLIST.md)** - Verification checklist for all requirements
 - **[QUICK_REFERENCE.md](QUICK_REFERENCE.md)** - Quick reference card with all essential information
 
 ---
@@ -39,7 +34,7 @@ Welcome to the comprehensive documentation for the Jan-Gana-Drishti Predictive G
 | **Team ID** | UIDAI_2401 |
 | **Live Dashboard** | [jan-gana-drishti-uidai-02.streamlit.app](https://jan-gana-drishti-uidai-02.streamlit.app/) |
 | **GitHub Repository** | [github.com/Jdsb06/jan-gana-drishti-uidai](https://github.com/Jdsb06/jan-gana-drishti-uidai) |
-| **Submission PDF** | [../report/submission.pdf](../report/submission.pdf) |
+| **Submission PDF** | [../UIDAI_2401_Report.pdf](../UIDAI_2401_Report.pdf) |
 | **Main README** | [../README.md](../README.md) |
 
 ---
@@ -65,16 +60,6 @@ In-depth analysis of the three UIDAI datasets (biometric, demographic, enrolment
 Comprehensive deployment instructions for various cloud platforms. Includes configuration for Streamlit Cloud, AWS EC2, Azure App Service, and Render.
 
 **Target Audience:** DevOps engineers, production deployment teams
-
-### SUBMISSION.md
-Complete hackathon submission package documentation. Lists all deliverables, technical highlights, and project statistics.
-
-**Target Audience:** Hackathon evaluators, judges
-
-### SUBMISSION_CHECKLIST.md
-Detailed verification checklist ensuring all hackathon requirements are met. Includes section-by-section verification of the submission PDF.
-
-**Target Audience:** Team members, submission coordinators
 
 ### QUICK_REFERENCE.md
 Single-page quick reference with Team ID, all links, and essential submission information.
@@ -104,18 +89,17 @@ jan-gana-drishti/
 │
 ├── docs/                        # ← YOU ARE HERE
 │   ├── README.md                # This file
+│   ├── PROJECT_STRUCTURE.md     # Complete project structure
 │   ├── QUICK_START.md
 │   ├── DATASET_ANALYSIS.md
 │   ├── CLOUD_DEPLOYMENT_GUIDE.md
-│   ├── SUBMISSION.md
-│   ├── SUBMISSION_CHECKLIST.md
 │   ├── QUICK_REFERENCE.md
 │   ├── API.md
 │   └── CONTRIBUTING.md
 │
-└── report/                      # Submission materials
-    ├── submission.pdf           # 54-page submission document
-    └── code_snippets/           # Python module source
+└── scripts/                     # Utility scripts
+    ├── verify_installation.py
+    └── test_fix.py
 ```
 
 ---
@@ -128,10 +112,9 @@ jan-gana-drishti/
 3. Deploy using [CLOUD_DEPLOYMENT_GUIDE.md](CLOUD_DEPLOYMENT_GUIDE.md)
 
 **For Evaluators:**
-1. Read [SUBMISSION.md](SUBMISSION.md)
-2. Check [SUBMISSION_CHECKLIST.md](SUBMISSION_CHECKLIST.md)
-3. Review [../report/submission.pdf](../report/submission.pdf)
-4. Test [Live Dashboard](https://jan-gana-drishti-uidai-02.streamlit.app/)
+1. Review [Submission PDF](../UIDAI_2401_Report.pdf)
+2. Test [Live Dashboard](https://jan-gana-drishti-uidai-02.streamlit.app/)
+3. Check [Project Structure](PROJECT_STRUCTURE.md)
 
 **For Contributors:**
 1. See [CONTRIBUTING.md](CONTRIBUTING.md)

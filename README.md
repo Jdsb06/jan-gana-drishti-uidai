@@ -9,7 +9,7 @@
 
 **An AI-powered prescriptive analytics platform transforming Aadhaar transaction data into actionable governance insights**
 
-[Features](#-key-features) • [Quick Start](#-quick-start) • [Documentation](#-documentation) • [Live Demo](https://jan-gana-drishti-uidai-02.streamlit.app/) • [📄 Submission](docs/SUBMISSION.md)
+[Features](#-key-features) • [Quick Start](#-quick-start) • [Documentation](#-documentation) • [Live Demo](https://jan-gana-drishti-uidai-02.streamlit.app/) • [📄 Report](UIDAI_2401_Report.pdf)
 
 </div>
 
@@ -21,8 +21,7 @@
 |------|---------|
 | **Team ID** | UIDAI_2401 |
 | **Live Dashboard** | [jan-gana-drishti-uidai-02.streamlit.app](https://jan-gana-drishti-uidai-02.streamlit.app/) |
-| **Submission PDF** | [`report/submission.pdf`](report/submission.pdf) (54 pages, 440 KB) |
-| **Documentation** | [docs/SUBMISSION.md](docs/SUBMISSION.md) |
+| **Submission PDF** | [`UIDAI_2401_Report.pdf`](UIDAI_2401_Report.pdf) (54 pages, 440 KB) |
 | **GitHub** | [github.com/Jdsb06/jan-gana-drishti-uidai](https://github.com/Jdsb06/jan-gana-drishti-uidai) |
 
 ---
@@ -157,12 +156,8 @@ jan-gana-drishti/
 │   ├── QUICK_START.md           # Installation guide
 │   ├── DATASET_ANALYSIS.md      # Data structure details
 │   ├── CLOUD_DEPLOYMENT_GUIDE.md # Deployment instructions
-│   ├── SUBMISSION.md            # Hackathon submission info
-│   └── SUBMISSION_CHECKLIST.md  # Submission verification
-│
-└── report/                      # Submission materials
-    ├── submission.pdf           # Final submission document
-    └── code_snippets/           # Module source code
+│   ├── API.md                   # API documentation
+│   └── QUICK_REFERENCE.md       # Quick reference card
 ```
 
 ---
@@ -287,15 +282,14 @@ Tracks **Mandatory Biometric Update (MBU)** compliance for children (5-17 years)
 ---
 
 ## 📚 Documentation
-| [SUBMISSION.md](docs/SUBMISSION.md) | Hackathon submission details |
-| [QUICK_REFERENCE.md](docs/QUICK_REFERENCE.md) | Quick submission reference |
-| [API.md](docs/API.md) | API documentation (if applicable) |
 
 | Document | Description |
 |----------|-------------|
 | [QUICK_START.md](docs/QUICK_START.md) | Installation and basic usage guide |
 | [DATASET_ANALYSIS.md](docs/DATASET_ANALYSIS.md) | Data structure and quality analysis |
 | [CLOUD_DEPLOYMENT_GUIDE.md](docs/CLOUD_DEPLOYMENT_GUIDE.md) | Deploy to Streamlit Cloud, AWS, Azure |
+| [QUICK_REFERENCE.md](docs/QUICK_REFERENCE.md) | Quick submission reference |
+| [API.md](docs/API.md) | API documentation |
 
 ---
 
@@ -340,16 +334,13 @@ Tracks **Mandatory Biometric Update (MBU)** compliance for children (5-17 years)
 - **Access Control**: Role-based authentication for production use
 
 ---
-Team ID:** UIDAI_2401  
+**Team ID:** UIDAI_2401  
 **Hackathon:** UIDAI Analytics Challenge 2026  
 **Repository:** [github.com/Jdsb06/jan-gana-drishti-uidai](https://github.com/Jdsb06/jan-gana-drishti-uidai)
 
 **Developed for:**  
 Unique Identification Authority of India (UIDAI)  
 Government of India
-Government of India
-
-**Hackathon:** UIDAI Analytics Challenge 2026
 
 **Technical Support:**  
 For queries, issues, or feature requests, please open a GitHub issue.
