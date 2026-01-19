@@ -1,6 +1,6 @@
 """
-Module 1: Clean & Merge Pipeline (ETL)
-Handles data loading, state name cleaning using fuzzy matching, and aggregation
+Module 1: Clean & Merge Pipeline (ETL) - Cloud Version
+Loads data from GitHub Releases or cloud storage URLs
 """
 
 import pandas as pd
@@ -8,7 +8,34 @@ import numpy as np
 from pathlib import Path
 from fuzzywuzzy import process, fuzz
 import warnings
+import requests
+import zipfile
+import io
+import streamlit as st
+
 warnings.filterwarnings('ignore')
+
+
+# =====================================================================
+# CONFIGURATION: Update this URL after uploading to GitHub Release
+# =====================================================================
+DATA_RELEASE_URL = "https://github.com/Jdsb06/jan-gana-drishti-uidai/releases/download/v1.0.0/aadhaar_hackathon_data.zip"
+
+# Alternative: Direct CSV URLs (if hosting files separately)
+CSV_URLS = {
+    'biometric': [
+        "https://example.com/api_data_aadhar_biometric_0_500000.csv",
+        # Add more URLs
+    ],
+    'demographic': [
+        "https://example.com/api_data_aadhar_demographic_0_500000.csv",
+        # Add more URLs
+    ],
+    'enrolment': [
+        "https://example.com/api_data_aadhar_enrolment_0_500000.csv",
+        # Add more URLs
+    ]
+}
 
 
 # Official LGD (Local Government Directory) State Names
@@ -25,9 +52,10 @@ OFFICIAL_STATE_NAMES = [
 
 
 class AadhaarETLPipeline:
-    """ETL Pipeline for Aadhaar datasets with fuzzy matching state name cleaning"""
+    """ETL Pipeline for Aadhaar datasets with cloud storage support"""
     
-    def __init__(self, data_dir='data'):
+    def __init__(self, use_cloud=True, data_dir='data'):
+        self.use_cloud = use_cloud
         self.data_dir = Path(data_dir)
         self.biometric_df = None
         self.demographic_df = None
@@ -35,8 +63,46 @@ class AadhaarETLPipeline:
         self.merged_df = None
         self.state_mapping = {}
         
-    def load_csv_files(self, pattern, dataset_name):
-        """Load and concatenate multiple CSV files matching a pattern"""
+    @st.cache_data(ttl=3600)
+    def download_and_extract_data(_self):
+        """Download data from GitHub Release and extract to memory"""
+        print("☁️  Downloading data from cloud storage...")
+        
+        try:
+            response = requests.get(DATA_RELEASE_URL, stream=True)
+            response.raise_for_status()
+            
+            # Extract ZIP in memory
+            with zipfile.ZipFile(io.BytesIO(response.content)) as zip_ref:
+                file_list = zip_ref.namelist()
+                print(f"  ✓ Downloaded {len(file_list)} files")
+                
+                datasets = {
+                    'biometric': [],
+                    'demographic': [],
+                    'enrolment': []
+                }
+                
+                for filename in file_list:
+                    if 'biometric' in filename and filename.endswith('.csv'):
+                        df = pd.read_csv(zip_ref.open(filename))
+                        datasets['biometric'].append(df)
+                    elif 'demographic' in filename and filename.endswith('.csv'):
+                        df = pd.read_csv(zip_ref.open(filename))
+                        datasets['demographic'].append(df)
+                    elif 'enrolment' in filename and filename.endswith('.csv'):
+                        df = pd.read_csv(zip_ref.open(filename))
+                        datasets['enrolment'].append(df)
+                
+                return datasets
+                
+        except Exception as e:
+            print(f"❌ Error downloading data: {e}")
+            print("⚠️  Falling back to local data...")
+            return None
+    
+    def load_csv_files_local(self, pattern, dataset_name):
+        """Load and concatenate multiple CSV files from local storage"""
         folder_path = self.data_dir / pattern
         csv_files = sorted(folder_path.glob('*.csv'))
         
@@ -110,15 +176,33 @@ class AadhaarETLPipeline:
         return df
     
     def load_all_datasets(self):
-        """Load all three datasets"""
+        """Load all three datasets from cloud or local"""
         print("="*80)
-        print("MODULE 1: CLEAN & MERGE PIPELINE (ETL)")
+        print("MODULE 1: CLEAN & MERGE PIPELINE (ETL) - Cloud Version")
         print("="*80 + "\n")
         
-        # Load datasets
-        self.biometric_df = self.load_csv_files('api_data_aadhar_biometric', 'Biometric')
-        self.demographic_df = self.load_csv_files('api_data_aadhar_demographic', 'Demographic')
-        self.enrolment_df = self.load_csv_files('api_data_aadhar_enrolment', 'Enrolment')
+        if self.use_cloud:
+            # Try loading from cloud
+            datasets = self.download_and_extract_data()
+            
+            if datasets:
+                self.biometric_df = pd.concat(datasets['biometric'], ignore_index=True)
+                self.demographic_df = pd.concat(datasets['demographic'], ignore_index=True)
+                self.enrolment_df = pd.concat(datasets['enrolment'], ignore_index=True)
+                
+                print(f"✅ Loaded from cloud:")
+                print(f"  Biometric: {len(self.biometric_df):,} records")
+                print(f"  Demographic: {len(self.demographic_df):,} records")
+                print(f"  Enrolment: {len(self.enrolment_df):,} records\n")
+            else:
+                # Fallback to local
+                self.use_cloud = False
+        
+        if not self.use_cloud:
+            # Load from local files
+            self.biometric_df = self.load_csv_files_local('api_data_aadhar_biometric', 'Biometric')
+            self.demographic_df = self.load_csv_files_local('api_data_aadhar_demographic', 'Demographic')
+            self.enrolment_df = self.load_csv_files_local('api_data_aadhar_enrolment', 'Enrolment')
         
         # Parse dates
         for df in [self.biometric_df, self.demographic_df, self.enrolment_df]:
@@ -185,7 +269,7 @@ class AadhaarETLPipeline:
         merged = bio_agg.merge(demo_agg, on=['state', 'district', 'month_year'], how='outer')
         merged = merged.merge(enrol_agg, on=['state', 'district', 'month_year'], how='outer')
         
-        # Fill NaN with 0 (districts may not have all types of transactions)
+        # Fill NaN with 0
         merged = merged.fillna(0)
         
         # Add total enrolment column
@@ -218,10 +302,12 @@ class AadhaarETLPipeline:
         return self.state_mapping
 
 
-def load_and_clean_data():
+@st.cache_data(ttl=3600)
+def load_and_clean_data(use_cloud=True):
     """
     Main entry point for ETL pipeline
     Returns cleaned and merged district-month level data
+    use_cloud: Load from cloud storage (True) or local files (False)
     """
-    pipeline = AadhaarETLPipeline()
+    pipeline = AadhaarETLPipeline(use_cloud=use_cloud)
     return pipeline.run_pipeline(), pipeline
