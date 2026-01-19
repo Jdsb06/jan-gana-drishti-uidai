@@ -1,0 +1,254 @@
+# License
+
+## Government of India License
+
+**Copyright © 2026 Government of India. All rights reserved.**
+
+This project, **Jan-Gana-Drishti** (जन-गण-दृष्टि), is developed for the Government of India under the UIDAI Analytics Challenge 2026.
+
+---
+
+## Terms of Use
+
+### 1. Data Usage
+
+All data used in this project is:
+- **Aggregated** at district level with no individual identifiers
+- **Anonymized** with no Personally Identifiable Information (PII)
+- **Government Property** provided by UIDAI for hackathon purposes
+- Subject to the **Aadhaar Act, 2016** and related regulations
+
+### 2. Permitted Use
+
+This software and its components may be used for:
+- Government policy analysis and planning
+- Research and academic purposes (with attribution)
+- Non-commercial applications aligned with public interest
+- Educational and training purposes within government institutions
+
+### 3. Restrictions
+
+**Prohibited Activities:**
+- Commercial exploitation without government authorization
+- Distribution or sale of the source code or derivatives for profit
+- Reverse engineering for competitive purposes
+- Any use that violates the Aadhaar Act, 2016 or data protection laws
+- Extraction, storage, or distribution of any PII
+- Unauthorized access or modification of Aadhaar systems
+
+### 4. Compliance Requirements
+
+Users must comply with:
+- **Aadhaar Act, 2016**
+- **Information Technology Act, 2000**
+- **Digital Personal Data Protection Act, 2023**
+- **Right to Information Act, 2005**
+- All applicable UIDAI regulations and guidelines
+
+---
+
+## Data Protection & Privacy
+
+### Data Handling
+
+This project adheres to strict data protection standards:
+
+1. **No PII Collection**: No individual Aadhaar numbers, names, addresses, or biometric data
+2. **Aggregation**: All data aggregated at district-month level or higher
+3. **Anonymization**: Statistical summaries only, no individual records
+4. **Secure Processing**: Data processed in secure, government-approved environments
+
+### UIDAI Compliance
+
+This project complies with:
+- UIDAI Data Security Guidelines
+- UIDAI Authentication/e-KYC Policies
+- Aadhaar Data Protection Framework
+- NIC Security Standards
+
+---
+
+## Software License
+
+### Open Source Components
+
+This project uses the following open-source components:
+
+| Component | License | Purpose |
+|-----------|---------|---------|
+| Python | PSF License | Programming language |
+| Streamlit | Apache 2.0 | Dashboard framework |
+| Pandas | BSD 3-Clause | Data processing |
+| NumPy | BSD 3-Clause | Numerical computing |
+| Plotly | MIT License | Visualization |
+| scikit-learn | BSD 3-Clause | Machine learning |
+| fuzzywuzzy | GPL v2 | Fuzzy matching |
+
+All open-source licenses are respected and attribution is provided.
+
+### Government Work Product
+
+Original code, algorithms, and methodologies developed for this project are:
+- **Government Work Product** created under hackathon participation
+- Available for use by Government of India departments and agencies
+- Subject to approval for external use or modification
+
+---
+
+## Attribution Requirements
+
+### For Government Use
+
+When using this project within government:
+```
+Powered by Jan-Gana-Drishti
+Developed for Government of India
+UIDAI Analytics Challenge 2026
+```
+
+### For Academic/Research Use
+
+Required citation:
+```
+Jan-Gana-Drishti: Predictive Governance Dashboard
+Government of India UIDAI Hackathon 2026
+Available at: [repository URL]
+```
+
+### For Publications
+
+Academic or research publications using this work must cite:
+```
+@software{jan_gana_drishti_2026,
+  title = {Jan-Gana-Drishti: Predictive Governance Dashboard},
+  author = {[Team Name]},
+  year = {2026},
+  organization = {Government of India},
+  note = {UIDAI Analytics Challenge 2026}
+}
+```
+
+---
+
+## Disclaimer
+
+### No Warranty
+
+THIS SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+
+The Government of India makes no guarantees regarding:
+- Accuracy of analytical results
+- Completeness of data or analysis
+- Suitability for specific policy decisions
+- Absence of errors or bugs
+
+### Limitation of Liability
+
+In no event shall the Government of India, UIDAI, NIC, or project contributors be liable for any claim, damages, or other liability arising from the use of this software.
+
+### Policy Decisions
+
+This software provides analytical insights and recommendations. Final policy decisions rest with authorized government officials and must consider broader contextual factors beyond the scope of this tool.
+
+---
+
+## Intellectual Property
+
+### Patents and Inventions
+
+Any patentable inventions or innovations developed during this project:
+- Belong to the Government of India
+- Require approval for commercialization
+- May be used freely within government for public service
+
+### Trademarks
+
+- **Jan-Gana-Drishti** (जन-गण-दृष्टि) is a trademark concept for this project
+- Government of India emblems and symbols are protected trademarks
+- Use of official government insignia requires authorization
+
+---
+
+## Export Control
+
+This software may be subject to:
+- Indian export control regulations
+- Technology transfer restrictions
+- National security considerations
+
+Users must ensure compliance with all applicable export and technology transfer laws.
+
+---
+
+## Modification and Derivative Works
+
+### Government Agencies
+
+Government of India departments and agencies may:
+- Modify the code for internal use
+- Create derivative works for government purposes
+- Integrate with existing government systems
+- Share modifications across government entities
+
+### External Parties
+
+External parties (academic, NGO, private sector) must:
+- Obtain written permission for modifications
+- Attribute original work to Government of India
+- Share improvements back to the government
+- Not commercialize without authorization
+
+---
+
+## Termination
+
+This license may be terminated:
+- Upon violation of terms
+- At the discretion of Government of India
+- If used for unlawful purposes
+- If data protection standards are breached
+
+Upon termination:
+- All use rights cease immediately
+- Copies must be destroyed or returned
+- Derivatives must be discontinued
+- Attribution must be maintained for past use
+
+---
+
+## Governing Law
+
+This license is governed by the laws of India. Any disputes shall be subject to the exclusive jurisdiction of courts in New Delhi, India.
+
+---
+
+## Contact for Licensing
+
+For licensing inquiries, permissions, or clarifications:
+
+**National Informatics Centre (NIC)**  
+Government of India  
+Electronics Niketan, 6 CGO Complex  
+Lodhi Road, New Delhi - 110003  
+India
+
+Email: licensing@nic.in  
+Website: https://www.nic.in
+
+---
+
+## Acknowledgment
+
+By using this software, you acknowledge that you have read, understood, and agree to be bound by these terms and conditions.
+
+---
+
+**Last Updated**: January 2026  
+**Version**: 1.0  
+**Applicable To**: Jan-Gana-Drishti v1.0.0 and all associated documentation
+
+---
+
+## 🇮🇳 Jai Hind! 🇮🇳
+
+*This project serves the people of India through data-driven governance.*
