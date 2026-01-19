@@ -63,13 +63,12 @@ class AadhaarETLPipeline:
         self.merged_df = None
         self.state_mapping = {}
         
-    @st.cache_data(ttl=3600)
-    def download_and_extract_data(_self):
+    def download_and_extract_data(self):
         """Download data from GitHub Release and extract to memory"""
         print("☁️  Downloading data from cloud storage...")
         
         try:
-            response = requests.get(DATA_RELEASE_URL, stream=True)
+            response = requests.get(DATA_RELEASE_URL, stream=True, timeout=120)
             response.raise_for_status()
             
             # Extract ZIP in memory
