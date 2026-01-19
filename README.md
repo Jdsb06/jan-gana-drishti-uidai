@@ -9,9 +9,21 @@
 
 **An AI-powered prescriptive analytics platform transforming Aadhaar transaction data into actionable governance insights**
 
-[Features](#-key-features) • [Quick Start](#-quick-start) • [Documentation](#-documentation) • [Architecture](#️-architecture)
+[Features](#-key-features) • [Quick Start](#-quick-start) • [Documentation](#-documentation) • [Live Demo](https://jan-gana-drishti-uidai-02.streamlit.app/) • [📄 Submission](docs/SUBMISSION.md)
 
 </div>
+
+---
+
+## 🎉 Hackathon Information
+
+| Item | Details |
+|------|---------|
+| **Team ID** | UIDAI_2401 |
+| **Live Dashboard** | [jan-gana-drishti-uidai-02.streamlit.app](https://jan-gana-drishti-uidai-02.streamlit.app/) |
+| **Submission PDF** | [`report/submission.pdf`](report/submission.pdf) (54 pages, 440 KB) |
+| **Documentation** | [docs/SUBMISSION.md](docs/SUBMISSION.md) |
+| **GitHub** | [github.com/Jdsb06/jan-gana-drishti-uidai](https://github.com/Jdsb06/jan-gana-drishti-uidai) |
 
 ---
 
@@ -81,8 +93,8 @@ Transform raw Aadhaar transaction logs into actionable intelligence that enables
 
 1. **Clone the repository**
 ```bash
-git clone https://github.com/YOUR_USERNAME/jan-gana-drishti.git
-cd jan-gana-drishti
+git clone https://github.com/Jdsb06/jan-gana-drishti-uidai.git
+cd jan-gana-drishti-uidai
 ```
 
 2. **Install dependencies**
@@ -118,9 +130,9 @@ For hosting on Streamlit Cloud, Render, AWS, or Azure, see [docs/CLOUD_DEPLOYMEN
 jan-gana-drishti/
 │
 ├── app.py                       # Main Streamlit application
-├── main.py                      # CLI/script runner
 ├── requirements.txt             # Python dependencies
 ├── run_dashboard.sh             # Quick launch script
+├── prepare_cloud_deployment.sh  # Cloud deployment prep
 │
 ├── modules/                     # Analytical engines
 │   ├── etl_pipeline.py          # Data loading & cleaning
@@ -131,15 +143,26 @@ jan-gana-drishti/
 │   ├── forecasting.py           # Predictive Forecasting Engine
 │   └── benchmarking.py          # Benchmarking Engine
 │
-├── data/                        # Aadhaar transaction data
+├── data/                        # Aadhaar transaction data (5M+ records)
 │   ├── api_data_aadhar_biometric/
 │   ├── api_data_aadhar_demographic/
 │   └── api_data_aadhar_enrolment/
 │
-└── docs/                        # Documentation
-    ├── QUICK_START.md
-    ├── DATASET_ANALYSIS.md
-    └── CLOUD_DEPLOYMENT_GUIDE.md
+├── scripts/                     # Utility scripts
+│   ├── verify_installation.py   # Installation verification
+│   ├── test_fix.py              # Module testing
+│   └── show_submission.sh       # Submission info display
+│
+├── docs/                        # Documentation
+│   ├── QUICK_START.md           # Installation guide
+│   ├── DATASET_ANALYSIS.md      # Data structure details
+│   ├── CLOUD_DEPLOYMENT_GUIDE.md # Deployment instructions
+│   ├── SUBMISSION.md            # Hackathon submission info
+│   └── SUBMISSION_CHECKLIST.md  # Submission verification
+│
+└── report/                      # Submission materials
+    ├── submission.pdf           # Final submission document
+    └── code_snippets/           # Module source code
 ```
 
 ---
@@ -264,6 +287,9 @@ Tracks **Mandatory Biometric Update (MBU)** compliance for children (5-17 years)
 ---
 
 ## 📚 Documentation
+| [SUBMISSION.md](docs/SUBMISSION.md) | Hackathon submission details |
+| [QUICK_REFERENCE.md](docs/QUICK_REFERENCE.md) | Quick submission reference |
+| [API.md](docs/API.md) | API documentation (if applicable) |
 
 | Document | Description |
 |----------|-------------|
@@ -314,11 +340,13 @@ Tracks **Mandatory Biometric Update (MBU)** compliance for children (5-17 years)
 - **Access Control**: Role-based authentication for production use
 
 ---
-
-## 📞 Contact & Support
+Team ID:** UIDAI_2401  
+**Hackathon:** UIDAI Analytics Challenge 2026  
+**Repository:** [github.com/Jdsb06/jan-gana-drishti-uidai](https://github.com/Jdsb06/jan-gana-drishti-uidai)
 
 **Developed for:**  
-National Informatics Centre (NIC)  
+Unique Identification Authority of India (UIDAI)  
+Government of India
 Government of India
 
 **Hackathon:** UIDAI Analytics Challenge 2026

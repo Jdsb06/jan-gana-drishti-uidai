@@ -31,3 +31,7 @@ build/
 
 # Deployment
 aadhaar_hackathon_data.zip
+report/
+scripts/
+docs/SUBMISSION_CHECKLIST.md
+docs/SUBMISSION.md
