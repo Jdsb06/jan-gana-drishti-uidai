@@ -32,7 +32,7 @@ build/
 # Deployment
 aadhaar_hackathon_data.zip
 report/
-scripts/
+# scripts/
 docs/SUBMISSION_CHECKLIST.md
 docs/SUBMISSION.md
 research/
